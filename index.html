@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        />
+
+        <title>얼굴형 테스트 - 얼굴, 모양, 달걀형</title>
+
+        <!--     site metadate     -->
+
+        <meta name="title" content="얼굴형 테스트 - 얼굴, 모양, 달걀형" />
+        <meta name="subject" content="인공지능으로 나는 어떤 얼굴형인지 테스트해보세요!" />
+        <meta name="description" content="인공지능으로 나는 어떤 얼굴형인지 테스트해보세요!" />
+        <meta
+            name="keywords"
+            content="인공지능, 얼굴형, 얼굴형 테스트, 얼굴, 달걀형, 둥근형, 땅콩형, 육각형, 다이아몬드형, 하트형"
+        />
+        <meta name="author" content="so-studio" />
+        <meta property="og:url" content="https://entfacetest.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="얼굴형 테스트 - 얼굴, 모양, 달걀형" />
+        <meta
+            property="og:description"
+            content="인공지능으로 나는 어떤 얼굴형인지 테스트해보세요! 얼굴형 테스트"
+        />
+        <!--   site metadate end      -->
+
+        <link rel="stylesheet" href="style.css" />
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <script
+            type="text/javascript"
+            src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f994518b80fb10f"
+        ></script>
+        <!--          -->
+
+        <!--    favicon start      -->
+        <!-- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" /> -->
+        <!--   favicon end   -->
+
+        <!--    네이버 검색 도구      -->
+        <!-- <meta name="naver-site-verification" content="a77c7bb7ccac3e1b15ca58c5d041e7b6dd1fd211" /> -->
+        <!--    네이버 검색 도구 end      -->
+        <!--    구글 검색 도구      -->
+        <!-- <meta
+            name="google-site-verification"
+            content="PAQVm6ZkD4XpMGtcLeYiockHkP8ceZwtQ7exiLPH2-c"
+        /> -->
+        <!--    구글 검색 도구 end      -->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">얼굴형 테스트</a>
+        </nav>
+
+        <section class="section">
+            <div class="mainlogo">
+                <h2>
+                    얼굴형 테스트
+                </h2>
+            </div>
+
+            <h3 class="subtitle">
+                인공지능으로 나는 어떤 얼굴형인지 테스트해보세요!
+            </h3>
+
+           
+        </section>
+
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+        <div class="container file-upload">
+            <div class="image-upload-wrap">
+                <input
+                    class="file-upload-input"
+                    type="file"
+                    onchange="readURL(this);"
+                    accept="image/*"
+                />
+                <div class="drag-text">
+                    <h3>사진을 올려놓거나 눌러서 업로드하세요!</h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+
+                <div id="loading" class="animated bounce">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="text-center">AI가 분석중입니다</p>
+                </div>
+
+                <h2 class="result-message"></h2>
+                <h3 class="content-1"></h3>
+                <h3 class="content-2"></h3>
+
+                <div id="label-container"></div>
+
+                <div class="addthis_inline_share_toolbox_n7fz"></div>
+
+                <div class="image-title-wrap">
+                    <button type="button" onclick="window.location.reload();" class="remove-image">
+                        다른 사진으로 다시하기
+                    </button>
+                </div>
+
+                 <!--       카카오 애드핏 top       -->
+            <!-- <ins
+                    class="kakao_ad_area"
+                    style="display: none;"
+                    data-ad-unit="DAN-TloKo1JEOkcvV2WQ"
+                    data-ad-width="320"
+                    data-ad-height="100"
+                ></ins>
+                <script
+                    type="text/javascript"
+                    src="//t1.daumcdn.net/kas/static/ba.min.js"
+                    async
+                ></script> -->
+            <!--     카카오 애드핏 end         -->
+                
+                 <!--       쿠팡 파트너스          -->
+                <script src="https://ads-partners.coupang.com/g.js"></script>
+                <script>
+                    new PartnersCoupang.G({ id: 357476 });
+                </script>
+                <!--        파트너스 end          -->
+               
+            </div>
+        </div>
+        
+        
+
+        <div class="container tip">
+            <p class="tip-text">
+                * 사용되는 사진은 어디에도 저장되지 않으며 재미와 참고용으로만 테스트해 주세요.
+            </p>
+            <p class="tip-text">
+                * 참고
+            </p>
+            <a class="tip-text" href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">
+                - 조코딩 유튜브 참고
+            </a>
+            <br />
+            <a class="tip-text" href="https://m.blog.naver.com/rarelee19/221848903117">
+                - 스타일 컨설턴트 레어 리(Rare Lee) 블로그
+            </a>
+            <br />
+            <a class="tip-text" href="https://brunch.co.kr/@miracle205/82">
+                - https://brunch.co.kr/@miracle205/82
+            </a>
+            <br />
+            <a
+                class="tip-text"
+                href="https://m.blog.naver.com/PostView.nhn?blogId=glassbaba&logNo=221324689841&proxyReferer=https:%2F%2Fwww.google.com%2F"
+            >
+                -
+                https://m.blog.naver.com/PostView.nhn?blogId=glassbaba&logNo=221324689841&proxyReferer=https:%2F%2Fwww.google.com%2F
+            </a>
+            <br />
+            <a class="tip-text" href="https://www.mstoday.co.kr/news/articleView.html?idxno=43533">
+                - https://www.mstoday.co.kr/news/articleView.html?idxno=43533
+            </a>
+            <br />
+        </div>
+
+        <!--     카카오 애드핏 bottom     -->
+        <!-- <ins
+            class="kakao_ad_area"
+            style="display: none;"
+            data-ad-unit="DAN-vzgsl2L95VN01XZk"
+            data-ad-width="320"
+            data-ad-height="100"
+        ></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> -->
+        <!--     애드핏 end     -->
+
+        <footer class="footer pt-5 container d-flex justify-content-center">
+            <div>
+                <!-- <p class="jocoding">참조. 조코딩 유튜브 채널</p> -->
+                <p>Copyright ⓒ so-studio 2020. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <div id="webcam-container"></div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+                        $('.content-1').hide();
+                        $('.content-2').hide();
+                        $('#loading').show();
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+
+                    init().then(() => {
+                        predict();
+                        $('#loading').hide();
+                    });
+                } else {
+                    removeUpload();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+        <script type="text/javascript">
+            const URL = 'https://teachablemachine.withgoogle.com/models/HrF0u74xS/';
+
+            let model, labelContainer, maxPredictions;
+
+            // Load the image model and setup the webcam
+            async function init() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+
+                model = await tmImage.load(modelURL, metadataURL);
+
+                maxPredictions = model.getTotalClasses();
+
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions; i++) {
+                    // and class labels
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
+
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+
+                var resultMessage = '';
+                var content_1 = '';
+                var content_2 = '';
+                var face_image_src = '';
+                switch (prediction[0].className) {
+                    case 'egg':
+                        resultMessage = '달걀형';
+                        content_1 =
+                            '얼굴의 비율이 좋은 얼굴형이며 턱선은 둥근편에 속하는 얼굴형 어떠한 헤어스타일도 소화 가능한 복받은 얼굴형입니다.';
+                        content_2 = '#김태희 #한예슬 #정해인 #원빈 #수지 #이민정';
+                        face_image_src = 'img/smlogo.jpg';
+                        break;
+                    case 'round':
+                        resultMessage = '둥근형';
+                        content_1 =
+                            '얼굴의 가로 세로 길이가 비슷하고 이마와 턱이 짧으며 둥글고 볼이 넓은 얼굴형 얼굴이 부드럽고 각이없어 귀여운 동안 얼굴이 많은 얼굴형입니다.';
+                        content_2 = '#오마이걸 유아 #소희 #송준기 #조정석 #강민경 #유이';
+                        face_image_src = 'img/yglogo.jpg';
+                        break;
+                    case 'diamond':
+                        resultMessage = '다이아몬드형';
+                        content_1 =
+                            '광대에 비해 턱과 이마, 볼이 좁은 얼굴형이며 샤프함과 도시적인 강한느낌을 주는 얼굴형입니다.';
+                        content_2 = '#브라운아이드걸스 가인 #김우빈 #고준희';
+                        face_image_src = 'img/jyplogo.png';
+                        break;
+                    case 'heart':
+                        resultMessage = '하트형';
+                        content_1 =
+                            '역삼각형 얼굴이라고도 하는 얼굴형으로 광대 골격과 턱 골격이 모두 있으나 광대골격이 턱 골격보다 넓은 얼굴형이며 이지적이고 시크한 인상을 주면서도 러블리해 보이는 특징을 가진 얼굴형입니다.';
+                        content_2 =
+                            '#걸스데이 유라 #트와이스 사나 #신민아 #구구단 미나 #황정음  #현빈';
+                        face_image_src = 'img/fnclogo.png';
+                        break;
+                    case 'peanut':
+                        resultMessage = '땅콩형';
+                        content_1 =
+                            '광대와 턱이 돌출된 데다 볼이 패여있는 얼굴형 이며 얼굴에 살이 없으면 광대가 살짝 패여보이는 특징이있어 개성있고 매력적인 얼굴형입니다.';
+                        content_2 = '#정은채 #안젤리나 졸리';
+                        face_image_src = 'img/wmlogo.png';
+                        break;
+                    case 'hexagon':
+                        resultMessage = '육각형';
+                        content_1 =
+                            '광대가 없고 턱이 돌출돼 있으며 강인하고 날카로워보이면서 중성적인 느낌을 주는 얼굴형입니다.';
+                        content_2 = '#한효주 #여진구 #이정재 #이병헌 #이동욱';
+                        face_image_src = 'img/biglogo.png';
+                        break;
+                    default:
+                        resultMessage = '알수없음';
+                        content_1 = '알수없음';
+                        content_2 = '알수없음';
+                        face_image_src = 'img/entlogo.png';
+                }
+
+                // $('.member-face-image').attr('src', face_image_src);
+                // $('.member-face-image').show();
+                $('.content-1').show();
+                $('.content-2').show();
+
+                $('.result-message').html(resultMessage);
+
+                $('.content-1').html(content_1);
+                $('.content-2').html(content_2);
+
+                for (let i = 0; i < maxPredictions; i++) {
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'egg':
+                            labelTitle = '달걀형';
+                            break;
+                        case 'round':
+                            labelTitle = '둥근형';
+                            break;
+                        case 'diamond':
+                            labelTitle = '다이아몬드형';
+                            break;
+                        case 'heart':
+                            labelTitle = '하트형';
+                            break;
+                        case 'peanut':
+                            labelTitle = '땅콩형';
+                            break;
+                        case 'hexagon':
+                            labelTitle = '육각형';
+                            break;
+                        default:
+                            labelTitle = '알수없음';
+                    }
+                    var label =
+                        "<div class='ent-label d-flex align-items-center'>" + labelTitle + '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
+            }
+        </script>
+    </body>
+
+    <!-- 
+image input box
+Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+gender toggle
+Copyright (c) 2020 by Mert Cukuren (https://codepen.io/knyttneve/pen/bPpEZY)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+</html>
