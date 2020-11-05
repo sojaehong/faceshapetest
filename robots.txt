@@ -1,0 +1,3 @@
+User-agent: *
+Allow:/
+Sitemap: https://sofaceshapetest.netlify.app/sitemap.xml
